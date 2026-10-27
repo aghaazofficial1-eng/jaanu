@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Meri Jaan - Zainab Nadeem ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Nastaliq+Urdu:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffd1dc, #ff9a9e, #fecfef);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating background hearts/kisses */
+        .bg-element {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            animation: floatUp 7s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(105vh) scale(0.6) rotate(0deg); opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
+        }
+
+        /* Container Card */
+        .container {
+            width: 92%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.93);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.25);
+            padding: 28px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            min-height: 560px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid rgba(255, 182, 193, 0.6);
+            transition: all 0.5s ease;
+        }
+
+        .page {
+            display: none;
+            width: 100%;
+            animation: fadeIn 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .page.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.96); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        h1, h2 {
+            color: #d81b60;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff4081, #e91e63);
+            color: white;
+            border: none;
+            padding: 13px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(233, 30, 99, 0.35);
+            transition: all 0.3s;
+            margin-top: 18px;
+            display: inline-block;
+        }
+
+        .btn:hover, .btn:active {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 12px 25px rgba(233, 30, 99, 0.5);
+        }
+
+        /* ------------------ Page 1: Lock ------------------ */
+        .lock-icon {
+            font-size: 4rem;
+            color: #ff4081;
+            margin-bottom: 10px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .pass-input {
+            width: 80%;
+            padding: 13px 18px;
+            border: 2px solid #ffb6c1;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 1.1rem;
+            outline: none;
+            margin-top: 15px;
+            color: #d81b60;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .pass-input:focus {
+            border-color: #e91e63;
+            box-shadow: 0 0 12px rgba(233, 30, 99, 0.25);
+        }
+
+        /* ------------------ Page 3: Cake ------------------ */
+        .cake-container {
+            position: relative;
+            width: 200px;
+            height: 180px;
+            margin: 20px auto;
+            cursor: pointer;
+        }
+
+        .cake-base {
+            width: 170px;
+            height: 70px;
+            background: linear-gradient(#ff6584, #f3426b);
+            border-radius: 15px 15px 10px 10px;
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            box-shadow: inset 0 -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cake-layer {
+            width: 120px;
+            height: 55px;
+            background: linear-gradient(#ff8fa3, #ff4d6d);
+            border-radius: 12px 12px 8px 8px;
+            position: absolute;
+            bottom: 60px;
+            left: 40px;
+        }
+
+        .frosting {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 15px;
+            background: #fff;
+            border-radius: 12px;
+        }
+
+        .candle {
+            width: 10px;
+            height: 35px;
+            background: repeating-linear-gradient(45deg, #fff, #fff 5px, #ff4081 5px, #ff4081 10px);
+            position: absolute;
+            bottom: 110px;
+            left: 95px;
+            border-radius: 4px;
+        }
+
+        .flame {
+            width: 14px;
+            height: 22px;
+            background: #ffd000;
+            border-radius: 50% 50% 20% 20%;
+            position: absolute;
+            top: -24px;
+            left: -2px;
+            box-shadow: 0 0 14px #ff9800;
+            animation: flicker 0.8s infinite alternate;
+        }
+
+        .flame.off {
+            display: none;
+        }
+
+        @keyframes flicker {
+            0% { transform: scale(1) rotate(-3deg); }
+            100% { transform: scale(1.15) rotate(3deg); }
+        }
+
+        /* ------------------ Page 4: Balloons ------------------ */
+        .balloons-area {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            min-height: 220px;
+        }
+
+        .balloon {
+            width: 65px;
+            height: 80px;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            background: radial-gradient(circle at 25px 25px, #ff758c, #ff4b72);
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.2s;
+            box-shadow: inset -4px -6px rgba(0, 0, 0, 0.15), 0 8px 15px rgba(255, 75, 114, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.4rem;
+            animation: balloonWiggle 3s infinite ease-in-out alternate;
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            width: 2px;
+            height: 14px;
+            background: rgba(0,0,0,0.25);
+        }
+
+        .balloon:nth-child(2) { background: radial-gradient(circle at 25px 25px, #ff9a9e, #fecfef); animation-delay: 0.5s; }
+        .balloon:nth-child(3) { background: radial-gradient(circle at 25px 25px, #ff4081, #c2185b); animation-delay: 1s; }
+        .balloon:nth-child(4) { background: radial-gradient(circle at 25px 25px, #f48fb1, #ad1457); animation-delay: 1.5s; }
+
+        @keyframes balloonWiggle {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-10px) rotate(4deg); }
+        }
+
+        .dropped-msg {
+            background: #fff0f3;
+            border: 1px dashed #ff4081;
+            padding: 12px;
+            border-radius: 14px;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #d81b60;
+            font-weight: 600;
+            animation: popIn 0.4s ease;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* ------------------ Page 5: Urdu Letter ------------------ */
+        .urdu-letter {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            direction: rtl;
+            text-align: right;
+            line-height: 2.3;
+            font-size: 1.05rem;
+            color: #4a154b;
+            background: #fff8fa;
+            border: 2px solid #ffd1dc;
+            padding: 22px 18px;
+            border-radius: 20px;
+            box-shadow: inset 0 0 20px rgba(255, 182, 193, 0.2);
+            margin: 15px 0;
+            position: relative;
+        }
+
+        /* ------------------ Page 6: Cards ------------------ */
+        .reason-box {
+            background: #fff0f5;
+            border-radius: 16px;
+            padding: 12px;
+            margin: 8px 0;
+            width: 100%;
+            border-left: 5px solid #ff4081;
+            text-align: left;
+            font-size: 0.9rem;
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        /* ------------------ Page 7: Proposal ------------------ */
+        .ring-box {
+            font-size: 4.5rem;
+            margin: 15px 0;
+            animation: ringRotate 2s infinite ease-in-out alternate;
+        }
+
+        @keyframes ringRotate {
+            0% { transform: rotate(-8deg) scale(1); }
+            100% { transform: rotate(8deg) scale(1.15); }
+        }
+
+        .proposal-btns {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            position: relative;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn-yes {
+            background: linear-gradient(45deg, #ff007f, #e91e63);
+            font-size: 1.2rem;
+            padding: 14px 40px;
+        }
+
+        .btn-no {
+            background: #aaa;
+            padding: 12px 25px;
+            transition: all 0.2s ease;
+        }
+
+        /* Confetti / Kiss Rain */
+        .kiss-rain {
+            position: fixed;
+            font-size: 2rem;
+            pointer-events: none;
+            z-index: 9999;
+            animation: rainDown 3.5s linear forwards;
+        }
+
+        @keyframes rainDown {
+            0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Background -->
+    <div id="bg-elements"></div>
+
+    <div class="container">
+
+        <!-- ================= PAGE 1: LOCK SCREEN ================= -->
+        <div class="page active" id="page-1">
+            <div class="lock-icon">🔒❤️</div>
+            <h1 style="font-size: 2.2rem;">For Zainab Nadeem</h1>
+            <p>Yeh surprise kholne ke liye aik secret password chahiye... Jo sirf humare dil ka raaz hai!</p>
+            <input type="password" id="passInput" class="pass-input" placeholder="Type password here...">
+            <button class="btn" onclick="checkPassword()">Unlock Surprise ✨</button>
+            <p id="error-msg" style="color: #ff1744; font-size: 0.85rem; display: none; margin-top: 8px;">
+                Galat password! Hint: 4 letters, begins with 'L' ❤️
+            </p>
+        </div>
+
+        <!-- ================= PAGE 2: BIRTHDAY WISH ================= -->
+        <div class="page" id="page-2">
+            <div style="font-size: 3.5rem;">🎉👑🎂</div>
+            <h1 style="font-size: 2.5rem; margin-top: 5px;">Happy Birthday!</h1>
+            <h2 style="color: #ff4081; font-size: 1.8rem;">Meri Pyaari Zainab Nadeem</h2>
+            <p>
+                Asad Nadeem ki zindagi ki sabse haseen khushi ko janam din bohot bohot mubarak ho! 💖✨<br>
+                Aap meri zindagi ka wo noor ho jisne meri poori duniya ko roshan kar diya hai.
+            </p>
+            <button class="btn" onclick="nextPage(3)">Next: Chalo Cake Kaatein! 🎂➔</button>
+        </div>
+
+        <!-- ================= PAGE 3: CAKE CUTTING ================= -->
+        <div class="page" id="page-3">
+            <h1 style="font-size: 2.2rem;">Make A Wish, Zainab!</h1>
+            <p id="cake-instruction">Mombatti par click kar ke blow karo aur wish maango! 🕯️✨</p>
+
+            <div class="cake-container" onclick="blowCandle()">
+                <div class="candle">
+                    <div class="flame" id="flame"></div>
+                </div>
+                <div class="cake-layer">
+                    <div class="frosting"></div>
+                </div>
+                <div class="cake-base">
+                    <div class="frosting"></div>
+                    <div style="color:white; font-size: 0.8rem; margin-top: 30px; font-weight: bold;">ZAINAB ❤️ ASAD</div>
+                </div>
+            </div>
+
+            <div id="cake-message" style="display: none; color: #d81b60; font-weight: 600; margin: 10px 0;">
+                Yummy! Happy Birthday Meri Queen! 🎂🍰💋
+            </div>
+
+            <button class="btn" id="cake-btn" style="display: none;" onclick="nextPage(4)">
+                Next: Balloon Surprise! 🎈➔
+            </button>
+        </div>
+
+        <!-- ================= PAGE 4: BALLOON POPPING (KISSES) ================= -->
+        <div class="page" id="page-4">
+            <h1 style="font-size: 2.2rem;">Pop The Balloons! 🎈</h1>
+            <p>Zainab, har balloon ko tap kar ke phoro aur apne kisses collect karo! 💋</p>
+
+            <div class="balloons-area">
+                <div class="balloon" onclick="popBalloon(this, '💋 Muuuaaah! 1000 Kisses for Zainab!')">🎈</div>
+                <div class="balloon" onclick="popBalloon(this, '💋 Asad loves your smile more than anything in this world!')">🎈</div>
+                <div class="balloon" onclick="popBalloon(this, '💋 You are Asad ki future Begum & heartbeat!')">🎈</div>
+                <div class="balloon" onclick="popBalloon(this, '💋 Meri jaan, aap jaisi pyaari poori dunya mein koi nahi!')">🎈</div>
+            </div>
+
+            <div id="dropped-message-box" class="dropped-msg" style="display: none;"></div>
+
+            <button class="btn" id="balloon-next" style="display: none;" onclick="nextPage(5)">
+                Next: Asad ka Khat 💌➔
+            </button>
+        </div>
+
+        <!-- ================= PAGE 5: URDU LOVE LETTER ================= -->
+        <div class="page" id="page-5">
+            <h1 style="font-size: 2.2rem;">Dil Ka Paigham 💌</h1>
+            
+            <div class="urdu-letter">
+                <b>میری پیاری زینب ندیم،</b><br>
+                تمہاری سالگرہ کے اس بابرکت اور خوبصورت دن پر، میں ربِ کریم کا لاکھ لاکھ شکر ادا کرتا ہوں جس نے تمہیں میری قسمت اور میری زندگی میں لکھا۔<br><br>
+                تم صرف میری محبت نہیں ہو، تم میرا سکون، میری دعا اور اسد ندیم کی آنے والی زندگی کی سب سے خوبصورت حقیقت ہو۔ تمہارے چہرے کی ایک مسکراہٹ میری ساری تھکن دور کر دیتی ہے۔ اللہ پاک تمہیں ہمیشہ سلامت اور ہنستا مسکراتا رکھے۔<br><br>
+                <b>ہمیشہ صرف اور صرف تمہارا،</b><br>
+                <b>اسد ندیم ❤️</b>
+            </div>
+
+            <button class="btn" onclick="nextPage(6)">Next: Special Wishes ✨➔</button>
+        </div>
+
+        <!-- ================= PAGE 6: WHY ASAD LOVES ZAINAB ================= -->
+        <div class="page" id="page-6">
+            <h1 style="font-size: 2.2rem;">Promises For You 💍</h1>
+            <p>Zainab, Asad Nadeem ke 3 haseen waaday:</p>
+
+            <div class="reason-box">
+                💖 <b>1. Hamesha Hasaunga:</b> Chahe kitni bhi mushkil ho, aapke labon ki hansi Asad ki zimmedari hai.
+            </div>
+            <div class="reason-box">
+                🌸 <b>2. Izzat aur Pyaar:</b> Apni jaan se zyada aapko izzat aur be-panah mohabbat doonga.
+            </div>
+            <div class="reason-box">
+                👑 <b>3. Rani bana kar rakhunga:</b> Meri zindagi ki pehli aur aakhri Malkin hamesha Zainab Nadeem hi hongi!
+            </div>
+
+            <button class="btn" onclick="nextPage(7)">Ab Aik Akhri Sawal... 🙈➔</button>
+        </div>
+
+        <!-- ================= PAGE 7: WILL YOU MARRY ME ================= -->
+        <div class="page" id="page-7">
+            <div class="ring-box">💍✨</div>
+            <h1 style="font-size: 2.4rem; color: #ff007f;">Zainab Nadeem</h1>
+            <h2 style="font-size: 2rem; margin: 5px 0;">Will You Marry Me?</h2>
+            <p style="font-weight: 600; color: #d81b60;">
+                Kisses hi kisses for Asad ki hone wali pyari wife! 💋💋💋
+            </p>
+
+            <div class="proposal-btns" id="btns-group">
+                <button class="btn btn-yes" onclick="acceptedProposal()">YES! A Thousand Times YES! ❤️</button>
+                <button class="btn btn-no" id="noBtn" onmouseover="runAway(this)" onclick="runAway(this)">No 😜</button>
+            </div>
+
+            <div id="final-celebration" style="display: none; margin-top: 15px;">
+                <h2 style="color: #d81b60; font-size: 2rem;">MUBARAK HO! 🎉</h2>
+                <p style="font-size: 1.1rem; color: #4a154b; font-weight: bold;">
+                    Mr. & Mrs. Asad Nadeem Forever! 💍❤️<br>
+                    Loads of Kisses 💋💋💋💋
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Floating hearts/kisses in the background
+        function createFloatingElement() {
+            const el = document.createElement('div');
+            el.className = 'bg-element';
+            const icons = ['🌸', '💖', '✨', '💋', '🎂', '💕'];
+            el.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.fontSize = (Math.random() * 18 + 16) + 'px';
+            el.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 7000);
+        }
+        setInterval(createFloatingElement, 500);
+
+        // Page Navigation
+        function nextPage(pageNumber) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById('page-' + pageNumber).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Page 1: Password Check
+        function checkPassword() {
+            const input = document.getElementById('passInput').value.trim().toLowerCase();
+            const error = document.getElementById('error-msg');
+            if (input === 'love') {
+                showerKisses(30);
+                nextPage(2);
+            } else {
+                error.style.display = 'block';
+            }
+        }
+
+        // Support Enter key for password
+        document.getElementById('passInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') checkPassword();
+        });
+
+        // Page 3: Cake Candle Blowing
+        let candleBlown = false;
+        function blowCandle() {
+            if (!candleBlown) {
+                document.getElementById('flame').classList.add('off');
+                document.getElementById('cake-instruction').innerHTML = "Awww! Wish maang li! Ab Cake Cut ho gaya! 🎂✨";
+                document.getElementById('cake-message').style.display = "block";
+                document.getElementById('cake-btn').style.display = "inline-block";
+                candleBlown = true;
+                showerKisses(35);
+            }
+        }
+
+        // Page 4: Balloon Popping
+        let poppedCount = 0;
+        function popBalloon(element, message) {
+            element.style.transform = "scale(0)";
+            element.style.opacity = "0";
+            element.style.pointerEvents = "none";
+            
+            const msgBox = document.getElementById('dropped-message-box');
+            msgBox.innerHTML = message;
+            msgBox.style.display = "block";
+
+            showerKisses(8);
+            poppedCount++;
+
+            if (poppedCount >= 2) {
+                document.getElementById('balloon-next').style.display = "inline-block";
+            }
+        }
+
+        // Page 7: Proposal "No" Button Runaway Fun
+        function runAway(button) {
+            const x = Math.random() * 200 - 100;
+            const y = Math.random() * 160 - 80;
+            button.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        // Page 7: Accepted Proposal
+        function acceptedProposal() {
+            document.getElementById('btns-group').style.display = 'none';
+            document.getElementById('final-celebration').style.display = 'block';
+            
+            // Continuous kisses & hearts celebration
+            let count = 0;
+            const interval = setInterval(() => {
+                showerKisses(15);
+                count++;
+                if (count > 8) clearInterval(interval);
+            }, 400);
+        }
+
+        // Kisses Rain Animation
+        function showerKisses(amount) {
+            const emojis = ['💋', '❤️', '💋', '💖', '💍', '💋'];
+            for (let i = 0; i < amount; i++) {
+                setTimeout(() => {
+                    const kiss = document.createElement('div');
+                    kiss.className = 'kiss-rain';
+                    kiss.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                    kiss.style.left = Math.random() * 95 + 'vw';
+                    kiss.style.top = '-20px';
+                    kiss.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    document.body.appendChild(kiss);
+                    setTimeout(() => kiss.remove(), 3500);
+                }, i * 70);
+            }
+        }
+    </script>
+</body>
+</html>
